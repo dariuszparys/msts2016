@@ -167,9 +167,6 @@ PublishScripts/
 *.nuget.props
 *.nuget.targets
 
-# Customer output paths for package building
-**/output/*
-
 # Microsoft Azure Build Output
 csx/
 *.build.csdef

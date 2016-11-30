@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Wichtel.Data
+namespace Wichtel.Common
 {
-    public class Class1
+    public interface IRepository
     {
-        public Class1()
-        {
-        }
+        User LookupWinner();
     }
 }
