@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Wichtel.Common;
 using Wichtel.Data;
+using Wichtel.WebApi.Middleware;
 
 namespace Wichtel.WebApi
 {
@@ -40,6 +41,7 @@ namespace Wichtel.WebApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseApiKey();
             app.UseMvc();
         }
     }
