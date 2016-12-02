@@ -8,9 +8,17 @@ namespace Wichtel.Data
 {
     public class Repository : IRepository
     {
-        public User LookupWinner()
+        private WichtelDb db = new WichtelDb();
+        public Winner LookupWinner()
         {
-            return new User{ Who = "@writeline", What = "Yep, it is me!" };
+            var tweets = db.Tweets.ToList();
+            var index = new Random().Next(0, tweets.Count - 1);
+            var tweet = tweets.ElementAt(index);
+            return new Winner
+            {
+                Who = tweet.Who,
+                What = tweet.What
+            };
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Wichtel.WebApi.Middleware
                 }
             }
 
+            logger.LogError($"Missing header {HTTP_HEADER_API_KEY}");
             context.Response.Clear();
             context.Response.StatusCode = StatusCodes.Status403Forbidden;
         }
